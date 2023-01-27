@@ -14,3 +14,22 @@
  * Text Domain:       at-a-glance-widget-plus
  * Domain Path:       /languages
  */
+
+namespace Lax\AtAGlanceWidgetPlus;
+
+function get_custom_post_counts() {
+
+    $args       = array(
+	    'public' => true,
+        '_builtin' => false
+    );
+    $post_types = get_post_types( $args, 'objects' );
+
+	foreach ( $post_types as $cpt ) {
+		$num_posts = wp_count_posts( $cpt->name );
+		$num = number_format_i18n( $num_posts->publish );
+		$text = _n( $cpt->labels->singular_name, $cpt->labels->name, intval( $num_posts->publish ) );
+		echo '<li class="'.$cpt->menu_icon.' '. esc_attr( $cpt->name ) . '-count"><a href="edit.php?post_type=' . esc_attr( $cpt->name ) . '">' . $num . ' ' . $text . '</a></li>';
+	}
+}
+add_action( 'dashboard_glance_items', __NAMESPACE__.'\get_custom_post_counts' );
