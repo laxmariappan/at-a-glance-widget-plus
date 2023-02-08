@@ -29,7 +29,13 @@ function get_custom_post_counts() {
 		$num_posts = wp_count_posts( $cpt->name );
 		$num = number_format_i18n( $num_posts->publish );
 		$text = _n( $cpt->labels->singular_name, $cpt->labels->name, intval( $num_posts->publish ) );
-		echo '<li class="'.$cpt->menu_icon.' '. esc_attr( $cpt->name ) . '-count"><a href="edit.php?post_type=' . esc_attr( $cpt->name ) . '">' . $num . ' ' . $text . '</a></li>';
+		echo '<li class=" dashicons-before '.$cpt->menu_icon.' " ><a  href="edit.php?post_type=' . esc_attr( $cpt->name ) . '">' . $num . ' ' . $text . '</a></li>';
 	}
+    echo '
+    <style>
+    #dashboard_right_now li.dashicons-before a:before{
+        content:"";padding:0;
+    }
+    </style>';
 }
 add_action( 'dashboard_glance_items', __NAMESPACE__.'\get_custom_post_counts' );
