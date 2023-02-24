@@ -1,0 +1,7 @@
+    #dashboard_right_now li.dashicons-before a:before{
+        content:"";
+        padding:0 3px;
+    }
+    #dashboard_right_now li.dashicons-before:before{
+        color: #646970;
+    }
