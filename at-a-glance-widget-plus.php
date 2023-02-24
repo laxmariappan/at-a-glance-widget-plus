@@ -29,12 +29,16 @@ function get_custom_post_counts() {
 		$num_posts = wp_count_posts( $cpt->name );
 		$num = number_format_i18n( $num_posts->publish );
 		$text = _n( $cpt->labels->singular_name, $cpt->labels->name, intval( $num_posts->publish ) );
-		echo '<li class=" dashicons-before '.$cpt->menu_icon.' " ><a  href="edit.php?post_type=' . esc_attr( $cpt->name ) . '">' . $num . ' ' . $text . '</a></li>';
+		$icon = $cpt->menu_icon ? $cpt->menu_icon : 'dashicons-admin-post';
+        echo '<li class=" dashicons-before '.$icon.' " ><a  href="edit.php?post_type=' . esc_attr( $cpt->name ) . '">' . $num . ' ' . $text . '</a></li>';
 	}
     echo '
     <style>
     #dashboard_right_now li.dashicons-before a:before{
-        content:"";padding:0;
+        content:"";padding:0 3px 0 3px;
+    }
+    #dashboard_right_now li.dashicons-before:before{
+        color: #646970;
     }
     </style>';
 }
