@@ -1,0 +1,17 @@
+{
+  "name": "lax/at-a-glance-widget-plus",
+  "description": "At A Glance Widget Plus",
+  "type": "wordpress-plugin",
+  "require-dev": {
+    "phpcompatibility/phpcompatibility-wp": "dev-master",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+    "wp-coding-standards/wpcs": "^2",
+    "squizlabs/php_codesniffer": "^3.0@dev"
+  },
+  "scripts": {
+    "format": "./vendor/bin/phpcbf --standard=wordpress ",
+    "lint": "./vendor/bin/phpcs --standard=wordpress --report=code"
+  },
+  "license": "proprietary",
+  "minimum-stability": "dev"
+}
