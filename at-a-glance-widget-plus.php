@@ -39,7 +39,7 @@ function get_custom_post_counts() {
 		$num       = number_format_i18n( $num_posts->publish );
 		$text      = ( 1 === intval( $num_posts->publish ) ) ? $cpt->labels->singular_name : $cpt->labels->name;
 		$icon      = $cpt->menu_icon ? $cpt->menu_icon : 'dashicons-admin-post';
-		echo esc_html( '<li class=" dashicons-before ' . $icon . ' " ><a  href="edit.php?post_type=' . esc_attr( $cpt->name ) . '">' . $num . ' ' . $text . '</a></li>' );
+		echo '<li class=" dashicons-before ' . esc_attr( $icon ) . ' " ><a  href="edit.php?post_type=' . esc_attr( $cpt->name ) . '">' . esc_html( $num ) . ' ' . esc_html( $text ) . '</a></li>';
 	}
 }
 
