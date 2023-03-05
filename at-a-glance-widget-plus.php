@@ -5,7 +5,7 @@
  * Description:       A WordPress plugin to extend the core at a glance widget.
  * Version:           1.0.0
  * Requires at least: 6.1
- * Requires PHP:      8.1
+ * Requires PHP:      7.4
  * Author:            Lax Mariappan
  * Author URI:        https://laxmariappan.com/
  * License:           GPL v3 or later
