@@ -53,7 +53,7 @@ add_action( 'dashboard_glance_items', __NAMESPACE__ . '\get_custom_post_counts' 
  * @author Lax Mariappan <lax@webdevstudios.com>
  */
 function admin_styles() {
-	wp_enqueue_style( 'style', plugin_dir_url( __FILE__ ) . '/assets/style.css', array(), '0.1.0' );
+	wp_enqueue_style( 'style', plugin_dir_url( __FILE__ ) . '/css/style.css', array(), '0.1.0' );
 }
 
 add_action( 'admin_print_styles', __NAMESPACE__ . '\admin_styles' );
