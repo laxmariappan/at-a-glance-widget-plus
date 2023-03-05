@@ -2,8 +2,8 @@
 
 Stable Tag: 1.0.0 
 Requires at least: 6.1 
-Tested up to: 6.1.1 
-Requires PHP: 8.1 
+Tested up to: 6.1.1
+Requires PHP: 7.4 
 License: GPL v2 or later  
 Tags: dashboard, admin, stats, at-a-glance, custom post types 
 Contributors: lakshmananphp  
